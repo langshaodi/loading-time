@@ -1,0 +1,9 @@
+*.log
+*.pyc
+*.sqlite3
+*.info
+.env
+media/
+static/
+node_modules/
+bower_modules/
