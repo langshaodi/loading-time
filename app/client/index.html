@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="/static/js/app.js"></script>
 	<script type="text/javascript" src="/static/angular/angular.js"></script>
+	<script type="text/javascript" src="/static/js/app.js"></script>
 	<title></title>
 </head>
-<body>
-	
+<body ng-app="app">
+	<ul>
+	<li ng-repeat="num in [1,2,3]"> {{num}}</li>
+	</ul>
 </body>
 </html>

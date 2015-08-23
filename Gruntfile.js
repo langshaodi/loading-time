@@ -30,9 +30,9 @@ module.exports = function(grunt) {
         mangle: false,
         compress: false
       },
-      my_target: {
+      app: {
         files: {
-          'app/dist/build/js/app.js': ['app/client/js/**/*.js']
+          'app/dist/build/js/app.js': ['app/client/app/**/*.js', 'app/client/assets/js/**/*.js']
         }
       }
     },
@@ -47,21 +47,21 @@ module.exports = function(grunt) {
 
     watch: {
       styles: {
-        files: ['app/client/assets/less/**/*.less'], // which files to watch
+        files: ['app/client/assets/less/**/*.less'],
         tasks: ['less'],
         options: {
           nospawn: true
         }
       },
       html: {
-        files: ['app/client/**/*.html'], // which files to watch
+        files: ['app/client/**/*.html'],
         tasks: ['copy'],
         options: {
           nospawn: true
         } 
       },
       js: {
-        files: ['app/client/js/**/*.js'], // which files to watch
+        files: ['app/client/app/**/*.js', 'app/client/assets/js/**/*.js'],
         tasks: ['uglify'],
         options: {
           nospawn: true
@@ -73,6 +73,6 @@ module.exports = function(grunt) {
 
   // Register tasks here.
   grunt.registerTask('default', ['build', 'watch']);
-  grunt.registerTask('build', ['copy', 'less']);
+  grunt.registerTask('build', ['copy', 'less', 'uglify']);
 
 };
