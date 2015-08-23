@@ -4,6 +4,16 @@
 
 Starting up is easy. Just clone the repository, install dependencies, and run `manage.py`.
 
+###Prerequisites
+The following are required:
+
+* `npm`
+* `bower`
+* `pip`
+* `brew`, `apt-get`, or `yum`
+
+### Installation
+
 * Clone the repository:
 
 ```
@@ -28,7 +38,7 @@ $ pip install -r requirements.txt
 $ ./app/manage.py
 ```
 
-### .env
+## .env
 
 A .env file is required to configure system-wide settings. The format of the file is below. For strings containing spaces, use quotations. Avoid spaces between the key and the value.
 
@@ -45,9 +55,9 @@ default.HOST=
 default.PORT=
 ```
 
-### Installing PostgreSQL
+## Installing PostgreSQL
 
-####OSX
+###OSX
 * Install PostgreSQL for devel support
 
    ```
