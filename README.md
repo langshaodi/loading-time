@@ -19,7 +19,7 @@ $ bower install
 ```
 * [Install PostgreSQL](#installing-postgresql)
 
-* Configure the [.env file](#.env)  
+* Configure the [.env file](#env)  
 
 ```
 $ ./app/manage.py
