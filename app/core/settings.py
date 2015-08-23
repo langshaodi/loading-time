@@ -19,6 +19,9 @@ ENV = os.environ.get
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ENV("SECRET_KEY", None)
 
+# Site ID
+SITE_ID = 1
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if ENV("DEBUG") in ["True", "true", "yes", "on"] else False
 
@@ -29,6 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -46,6 +50,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+# URL Configuration
 
 ROOT_URLCONF = 'core.urls'
 
@@ -97,12 +103,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+BUILD_ROOT  = os.path.join(BASE_DIR, 'dist/build/')
+
 STATIC_URL  = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'dist/static/')
 STATICFILES_DIRS = (
-    os.path.join(STATIC_ROOT,  "bower"),
-
+    os.path.join(BASE_DIR,  "dist/bower/"),
+    BUILD_ROOT,
 )
-print STATICFILES_DIRS
+
 MEDIA_URL   = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'dist/media/')
