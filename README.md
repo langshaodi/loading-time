@@ -4,22 +4,25 @@
 
 Starting up is easy. Just clone the repository, install dependencies, and run `manage.py`.
 
-* Clone the repository
+* Clone the repository:
 
 ```
 $ git clone git@github.com:jamiecounsell/procurement.git
 $ cd procurement/
 ```
 
-* Install dependencies
+* [Install PostgreSQL](#installing-postgresql)
+
+* Install dependencies:
 
 ```
 $ npm install
 $ bower install
+$ pip install -r requirements.txt
 ```
-* [Install PostgreSQL](#installing-postgresql)
-
 * Configure the [.env file](#env)  
+
+* Run the server:
 
 ```
 $ ./app/manage.py
