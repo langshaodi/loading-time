@@ -1,10 +1,9 @@
 {
-  "name": "procurement",
+  "name": "",
   "version": "0.0.0",
-  "homepage": "https://github.com/jamiecounsell/procurement",
+  "homepage": "https://github.com/jamiecounsell/",
   "authors": [
-    "Jamie Counsell <jamiecounsell@me.com>",
-    "Shawn Simon <shawn.simon.developer@gmail.com>"
+    "Jamie Counsell <jamiecounsell@me.com>"
   ],
   "main": "app/manage.py",
   "license": "\"\"",
@@ -16,6 +15,5 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.4"
   }
 }

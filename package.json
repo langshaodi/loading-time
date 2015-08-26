@@ -1,12 +1,12 @@
 {
-  "name": "procurement",
+  "name": "",
   "version": "0.0.0",
-  "repository": "https://github.com/jamiecounsell/procurement",
+  "repository": "https://github.com/jamiecounsell/",
   "description": "",
   "scripts": {
     "test": "./manage.py test"
   },
-  "author": "Jamie Counsell <jamiecounsell@me.com>, Shawn Simon <shawn.simon.developer@gmail.com>",
+  "author": "Jamie Counsell <jamiecounsell@me.com>",
   "license": "",
   "dependencies": {
     "bower": "^1.4.1",
