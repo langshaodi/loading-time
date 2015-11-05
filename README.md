@@ -29,10 +29,16 @@ $ pip install -r requirements.txt
 ```
 * Configure the [.env file](#env)  
 
+* Migrate the server and create a superuser:
+
+```
+$ ./app/manage.py syncdb
+```
+
 * Run the server:
 
 ```
-$ ./app/manage.py
+$ ./app/manage.py gruntserver
 ```
 
 ## .env

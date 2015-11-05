@@ -9,7 +9,7 @@ from django.conf import settings
 
 class GameView(APIView):
     """
-    A viewset for viewing and editing games
+    A viewset to get new games. GET to generate a new game.
     """
     queryset = Game.objects.all()
     serializer_class = GameSerializer

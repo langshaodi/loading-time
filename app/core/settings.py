@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'core',
     'puzzles',
     'games',
+    'responses',
 )
 
 MIDDLEWARE_CLASSES = (
