@@ -37,7 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'rest_framework',
+    'core',
+    'puzzles',
+    'games',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,3 +117,9 @@ STATICFILES_DIRS = (
 
 MEDIA_URL   = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'dist/media/')
+
+# TEST SETTINGS
+DELAY_LOWER_BOUND = ENV('DELAY_LOWER_BOUND', 0)
+DELAY_UPPER_BOUND = ENV('DELAY_UPPER_BOUND', 100)
+
+NUM_OF_PUZZLES = ENV('NUM_OF_PUZZLES', 10)

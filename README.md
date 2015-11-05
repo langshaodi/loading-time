@@ -20,8 +20,6 @@ $ git clone git@github.com:jamiecounsell/procurement.git
 $ cd procurement/
 ```
 
-* [Install PostgreSQL](#installing-postgresql)
-
 * Install dependencies:
 
 ```
@@ -46,22 +44,6 @@ SECRET_KEY=
 DEBUG=
 
 # Databases
-default.ENGINE='django.db.backends.postgresql_psycopg2'
+default.ENGINE='django.db.backends.sqlite3'
 default.NAME=
-default.USER=
-default.PASSWORD=
-default.HOST=
-default.PORT=
 ```
-
-## Installing PostgreSQL
-
-###OSX
-* Install PostgreSQL for devel support
-
-   ```
-   $ brew install postgresql
-   ```
-* Configure PostgreSQL or use [postgresqpp](http://postgresapp.com/) (recommended)
-
-* Add configuration to `.env`.
