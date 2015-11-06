@@ -50,6 +50,6 @@ SECRET_KEY=
 DEBUG=
 
 # Databases
-default.ENGINE='django.db.backends.sqlite3'
-default.NAME=
+default_ENGINE='django.db.backends.sqlite3'
+default_NAME=
 ```
