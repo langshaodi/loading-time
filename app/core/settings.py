@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':   ENV("default.ENGINE",   ""),
-        'NAME':     ENV("default.NAME",     ""),
-        'USER':     ENV("default.USER",     ""),
-        'PASSWORD': ENV("default.PASSWORD", ""),
-        'HOST':     ENV("default.HOST",     ""),
-        'PORT':     ENV("default.PORT",     ""),
+        'ENGINE':   ENV("default_ENGINE",   ""),
+        'NAME':     ENV("default_NAME",     ""),
+        'USER':     ENV("default_USER",     ""),
+        'PASSWORD': ENV("default_PASSWORD", ""),
+        'HOST':     ENV("default_HOST",     ""),
+        'PORT':     ENV("default_PORT",     ""),
     }
 }
 
