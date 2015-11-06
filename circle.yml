@@ -2,4 +2,4 @@ deployment:
   production:
     branch: master
     commands:
-      - ssh web@159.203.20.1 cd loading-time; ./build_prod.sh
+      - ssh web@159.203.20.1 "cd loading-time; ./build_prod.sh"
