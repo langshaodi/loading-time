@@ -6,3 +6,4 @@ bower install
 pip install -r requirements.txt
 gulp build
 ./app/manage.py migrate
+systemctl restart loading-time
