@@ -1,4 +1,5 @@
 cd loading-times
+pwd
 git pull origin master
 source ~/.bashrc
 workon loading-time
