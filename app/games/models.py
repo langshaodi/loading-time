@@ -10,7 +10,7 @@ def random_timeout():
 
 class Game(models.Model):
     puzzles = models.ManyToManyField(
-        'puzzles.Puzzle', blank=True, null=True)
+        'puzzles.Puzzle')
     delay = models.BigIntegerField(
         default=random_timeout, blank=False, null=False)
 
