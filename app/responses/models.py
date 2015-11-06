@@ -9,7 +9,7 @@ class Response(models.Model):
 class GameResponse(models.Model):
     response = models.ForeignKey(Response)
     game = models.OneToOneField('games.Game')
-    submitted = models.DateTimeField(auto_now=True)
+    submitted = models.DateTimeField(auto_now_add=True)
     frustration = models.SmallIntegerField(blank=False, null=False)
     total_time = models.FloatField(blank=True, null=True)
 
