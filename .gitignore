@@ -8,3 +8,4 @@ media/
 dist/
 node_modules/
 bower/
+*.conf
