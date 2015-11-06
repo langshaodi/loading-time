@@ -4,6 +4,6 @@ workon loading-time
 npm install
 bower install
 pip install -r requirements.txt
-gulp build
+grunt build
 ./app/manage.py migrate
 sudo systemctl restart loading-time
