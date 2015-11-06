@@ -5,5 +5,6 @@ npm install
 bower install
 pip install -r requirements.txt
 grunt build
+./app/manage.py collectstatic --noinput
 ./app/manage.py migrate
 sudo systemctl restart loading-time
