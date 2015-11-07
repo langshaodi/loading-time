@@ -1,3 +1,4 @@
+mkdir -p run
 git pull origin master
 source ~/.bashrc
 workon loading-time
