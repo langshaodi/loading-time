@@ -2,7 +2,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from core.views import index, urls_as_view
 from django.conf import settings
-from rest_framework.routers import DefaultRouter
 from games.views import GameView
 
 
@@ -14,12 +13,12 @@ else:
     urlpatterns = []
 
 apipatterns = [
-    url(r'^games/', GameView.as_view()),
+    url(r'^game/$', GameView.as_view()),
 ]
 
 urlpatterns += [url(r'^api/', include(apipatterns))]
 
 urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', urls_as_view)
+    url(r'^api/$', urls_as_view)
 ]
