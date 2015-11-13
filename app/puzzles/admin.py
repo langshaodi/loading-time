@@ -3,7 +3,9 @@ from .models import *
 
 
 class PuzzleAnswerOptionInline(admin.StackedInline):
-    extra = 1
+    min_num = 4
+    max_num = 4
+
     model = PuzzleAnswerOption
 
 
