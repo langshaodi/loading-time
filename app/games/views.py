@@ -16,8 +16,8 @@ class GameView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, format=None):
-        puzzles = Puzzle.objects.all().order_by(
-            '?')[:settings.NUM_OF_PUZZLES]
+        puzzles = [p for p in Puzzle.objects.all().order_by(
+            '?') if p.correct_answer()][:settings.NUM_OF_PUZZLES]
 
         game = Game.objects.create()
         game.puzzles = puzzles
