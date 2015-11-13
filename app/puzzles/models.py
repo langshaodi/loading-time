@@ -42,7 +42,7 @@ class Puzzle(models.Model):
     def __unicode__(self):
         return self.__repr__()
 
-    def text(self):
+    def question(self):
         return "{} is to {} as {} is to {}.".format(
             self.comparison_a_1.title() or self.sep,
             self.comparison_a_2 or self.sep,

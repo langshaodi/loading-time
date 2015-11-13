@@ -9,12 +9,9 @@ class PuzzleAnswerOptionSerializer(serializers.ModelSerializer):
 
 
 class PuzzleSerializer(serializers.ModelSerializer):
-    answers = serializers.SerializerMethodField()
+    answers = PuzzleAnswerOptionSerializer(
+        many=True, source='puzzleansweroption_set')
 
     class Meta:
         model = Puzzle
-
-    def get_answers(self, obj):
-        return PuzzleAnswerOptionSerializer(
-            PuzzleAnswerOption.objects.filter(puzzle=obj),
-            many=True).data
+        fields = ('id', 'question', 'answers')
