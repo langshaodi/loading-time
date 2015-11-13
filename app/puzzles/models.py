@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 class Puzzle(models.Model):
@@ -22,6 +23,15 @@ class Puzzle(models.Model):
             return PuzzleAnswerOption.objects.get(correct=True, puzzle=self)
         except PuzzleAnswerOption.DoesNotExist:
             return None
+
+    def clean(self):
+        answers = [c for c in [self.comparison_a_1,
+                               self.comparison_a_2,
+                               self.comparison_b_1,
+                               self.comparison_b_2] if c]
+        if len(answers) > 3 or len(answers) < 3:
+            raise ValidationError(
+                "Exactly one part of the analogy must be blank.")
 
     def __repr__(self):
         return self.text()
