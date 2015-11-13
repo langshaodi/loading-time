@@ -34,7 +34,7 @@ class Puzzle(models.Model):
                 "Exactly one part of the analogy must be blank.")
 
     def __repr__(self):
-        return self.text()
+        return self.question()
 
     def __str__(self):
         return self.__repr__()
