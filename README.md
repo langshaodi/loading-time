@@ -35,6 +35,12 @@ $ pip install -r requirements.txt
 $ ./app/manage.py syncdb
 ```
 
+* Build directories if missing:
+```
+$ mkdir app/dist
+$ mkdir app/build
+```
+
 * Run the server:
 
 ```

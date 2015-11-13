@@ -2,7 +2,20 @@ from django.db import models
 
 
 class Puzzle(models.Model):
-    text = models.CharField(max_length=1000, blank=False, null=False)
+    comparison_a_1 = models.CharField(
+        max_length=50, blank=True, null=True,
+        verbose_name="A", help_text="A:B::X:Y")
+    comparison_a_2 = models.CharField(
+        max_length=50, blank=True, null=True,
+        verbose_name="B", help_text="A:B::X:Y")
+    comparison_b_1 = models.CharField(
+        max_length=50, blank=True, null=True,
+        verbose_name="X", help_text="A:B::X:Y")
+    comparison_b_2 = models.CharField(
+        max_length=50, blank=True, null=True,
+        verbose_name="Y", help_text="A:B::X:Y")
+
+    sep = "______"
 
     def correct_answer(self):
         try:
@@ -11,7 +24,7 @@ class Puzzle(models.Model):
             return None
 
     def __repr__(self):
-        return self.text
+        return self.text()
 
     def __str__(self):
         return self.__repr__()
@@ -19,12 +32,19 @@ class Puzzle(models.Model):
     def __unicode__(self):
         return self.__repr__()
 
+    def text(self):
+        return "{} is to {} as {} is to {}.".format(
+            self.comparison_a_1.title() or self.sep,
+            self.comparison_a_2 or self.sep,
+            self.comparison_b_1 or self.sep,
+            self.comparison_b_2 or self.sep,
+        )
+
 
 class PuzzleAnswerOption(models.Model):
     puzzle = models.ForeignKey(Puzzle)
     correct = models.BooleanField(blank=False, null=False, default=False)
     text = models.CharField(max_length=500, blank=True, null=True)
-    image = models.FileField(upload_to='media/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.correct:
