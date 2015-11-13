@@ -43,11 +43,12 @@ class Puzzle(models.Model):
         return self.__repr__()
 
     def question(self):
-        return "{} is to {} as {} is to {}.".format(
+        return "{} is to {} as {} is to {}. ({})".format(
             self.comparison_a_1.title() or self.sep,
             self.comparison_a_2 or self.sep,
             self.comparison_b_1 or self.sep,
             self.comparison_b_2 or self.sep,
+            self.correct_answer() or "No Answer"
         )
 
 
