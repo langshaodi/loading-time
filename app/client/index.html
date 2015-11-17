@@ -6,14 +6,17 @@
 	<title></title>
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
-	
-	<p>GAME DELAY: {{game.delay}}</p>
+	<!-- info for developers -->
+	<!--
+	<p>GAMES: {{games}}</p>
+	<p>CURRENT GAME : {{active_game}}</p>
 	<p>RESPONSE: {{response}}</p>
-	
+	-->
+
 	<div ng-show="user_set == false">
 	<form id='participant-data' ng-submit="save_user()">
 		<p>Hello! Please fill out the following information:</p>
-		<label> Age: <input type='text' ng-model="response.participant.age"></label>
+		<label> Age: <input type='number' ng-model="response.participant.age"></label>
 		<label> Gender: 
 			<select ng-model="response.participant.gender">
 				<option value="M">Male</option>
@@ -26,12 +29,13 @@
 	</div>
 
 
-	<div ng-show="user_set == true" ng-repeat="puzzle in game.puzzles"> 
+	<div ng-show="user_set == true && intermission == false" 
+		ng-repeat="puzzle in games[active_game].puzzles">
 
 	<!-- display one question at a time -->
 	<div ng-show="$index == active_puzzle && load_screen == false;">
 		<p>	{{puzzle.question}} </p>
-		<form class="puzzle-form" id="{{$index}}" ng-submit="save_response(puzzle.id)">
+		<form class="puzzle-form" ng-submit="save_response(games[active_game].id, puzzle.id)">
 			<div ng-repeat="answer in puzzle.answers">
 			<input type="radio" name='test' ng-model="$parent.$parent.selected_answer" ng-value="answer.id">
 				{{answer.text}}
@@ -42,14 +46,18 @@
 	
 	</div>
 
+
 	<!-- loading widget -->
 	<div ng-show="load_screen == true;">
 		<p> LOADING </p>
 	</div>
+
+	<!-- intermission -->
+	<div ng-show="intermission == true;">
+		<p> Please click when you are ready for the next game. </p>
+		<button ng-click="continue()">Continue</button>
+	</div>
+
 	
-
-
-
-
 </body>
 </html>

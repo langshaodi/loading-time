@@ -1,19 +1,22 @@
 angular.module('app')
 .factory('Games', [
-	'$http',
-	function($http){
-
+	'$http', '$q',
+	function($http, $q){
 		var o = {
-	    game: {}
+	    games: []
 	  };
 
-  	o.retrieveGame = function() {
-	    return $http.get('/api/game/').success(function(data){
-	      angular.copy(data, o.game);
-	    });
+	  // retrieve 3 games
+  	o.retrieveGames = function() {
+  		$q.all([
+  			$http.get('/api/game/'),
+  			$http.get('/api/game/'),
+  			$http.get('/api/game/')
+  		]).then(function(results){
+  			 var data = [results[0].data,results[1].data,results[2].data]
+		     angular.copy(data, o.games);
+  		});
   	};
-
-
 	  return o;
 	}
 	]);
