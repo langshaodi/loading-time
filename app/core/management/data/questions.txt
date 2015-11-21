@@ -1,4 +1,3 @@
-a is to x as b is to _ ANS Y
 arrival is to departure as _ is to death ANS Life, person, illness, train
 elbow is to arm as knee is to _ ANS walking, Finger, leg, nose
 car is to road as train is to _ ANS Track, vehicle, fast, wheel
