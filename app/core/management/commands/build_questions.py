@@ -15,8 +15,7 @@ class Command(BaseCommand):
     help = 'Builds the question database'
 
     def handle(self, *args, **options):
-        print os.path.dirname(
-            os.path.realpath(__file__))
+        print "Building questions from data file."
         f = os.path.join(os.path.dirname(
             os.path.realpath(__file__)), '..', 'data/questions.txt')
         f = open(f, 'r')
