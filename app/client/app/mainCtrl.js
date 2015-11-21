@@ -77,7 +77,7 @@ angular.module('app')
 				$timeout(function(){	
 					$scope.load_screen = false;
 					timer = new Date();
-				}, $scope.games[$scope.active_game].delay)
+				}, $scope.games[$scope.active_game].delay * 1000)
 
 			}
 		};
