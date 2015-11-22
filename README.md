@@ -59,3 +59,11 @@ DEBUG=
 default_ENGINE='django.db.backends.sqlite3'
 default_NAME=
 ```
+
+## Helpful commands
+
+```
+$ ./manage.py build_questions 
+```
+- Automatically loads in a set of questions from a data file located in `app/core/management/data/`. Will not add duplicate questions (ie. the command is safe to run more than once). 
+- This command can be run as well to update the questions if changes or additions are made to the data.
