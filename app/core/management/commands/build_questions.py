@@ -14,6 +14,12 @@ def get_or_create(model, **kwargs):
 class Command(BaseCommand):
     help = 'Builds the question database'
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--print', dest='print', action='store_true',
+            help='Print out all questions verbosely.'
+        )
+
     def handle(self, *args, **options):
         print "Building questions from data file."
         f = os.path.join(os.path.dirname(
@@ -56,4 +62,13 @@ class Command(BaseCommand):
                     puzzle=puzzle,
                     text=a[0],
                     correct=a[1]
+                )
+            if options['print']:
+                print ("Question:       {}\n" +
+                       "Answers:        {}\n" +
+                       "Correct answer: {}\n").format(
+                    puzzle.question(),
+                    [str(pa.text)
+                     for pa in puzzle.puzzleansweroption_set.all()],
+                    puzzle.correct_answer().text
                 )
