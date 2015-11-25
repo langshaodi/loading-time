@@ -1,10 +1,27 @@
 
-@question-color: green;
+@question-color: #1abc9c;
 
 * {
     font-weight: 200 !important;
 }
 
+#participant-data {
+    text-align: center;
+    div {
+        margin-top:30px;
+        font-size:20px;
+    }
+    div input, div label {
+        font-size:30px;
+        width: 80px;
+    }
+    div label{
+        margin-right:50px;
+    }
+    div button {
+        font-size:50px;
+    }
+}
 .question {
     margin-top:50px;
     font-size:25px;
@@ -14,16 +31,18 @@
     a.answer {
         padding: 10px 20px 10px 20px;
         border: 1px solid @question-color;
+        background: @question-color;
         border-radius: 5px;
         display: block;
         margin: 0 auto;
         text-align: center;
-        margin-top:30px;
+        margin-top:60px;
         font-size:40px;
+        color: white;
         cursor: pointer;
         &:hover {
             text-decoration: none !important;
-            background: lighten(@question-color, 60%)
+            background: darken(@question-color, 10%)
         }
     }
 }

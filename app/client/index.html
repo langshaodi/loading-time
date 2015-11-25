@@ -18,16 +18,10 @@
 	<div ng-show="user_set == false">
 		<div class="container initial">
 			<form id='participant-data' ng-submit="save_user()" >
-				<p>Hello! Please fill out the following information:</p>
-				<label> Age: </label>
-				<input type='number' ng-model="response.participant.age">
-				<label> Gender:</label>
-				<select ng-model="response.participant.gender">
-					<option value="M">Male</option>
-					<option value="F">Female</option>
-				</select>
-
-				<button type="submit" class="btn btn-success">Submit</button>
+				<h1>Study: User Performance on Single Page Applications</h1>
+				<div>Select the number of games that you wish to play (please enter 2, 3, 4, or 5): </div>
+				<div><label>Games:</label><input type='number' ng-model="number_of_games"></div>
+				<div><button type="submit" class="btn btn-success">Start Game</button></div>
 			</form>
 		</div>
 	</div>

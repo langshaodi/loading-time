@@ -14,6 +14,8 @@ class Game(models.Model):
     delay = models.BigIntegerField(
         default=random_timeout, blank=False, null=False)
 
+    default = models.BooleanField(default=False)
+
     def num_puzzles(self):
         return len(self.puzzles.all())
 
@@ -23,3 +25,15 @@ class Game(models.Model):
 
     def __str__(self):
         return self.__repr__()
+
+    def save(self, *args, **kwargs):
+        if self.default:
+            try:
+                temp = Game.objects.get(
+                    default=True)
+                if self != temp:
+                    temp.default = False
+                    temp.save()
+            except Game.DoesNotExist:
+                pass
+        super(Game, self).save(*args, **kwargs)

@@ -26,3 +26,18 @@ class GameView(APIView):
         return Response(
             GameSerializer(game).data
         )
+
+
+class DefaultGameView(APIView):
+    """
+    A viewset to get the default game.
+    """
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+    permission_classes = (AllowAny,)
+
+    def get(self, request, format=None):
+        game = Game.objects.get(default=True)
+        return Response(
+            GameSerializer(game).data
+        )

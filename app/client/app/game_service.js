@@ -7,14 +7,17 @@ angular.module('app')
 	  };
 
 	  // retrieve 3 games
-  	o.retrieveGames = function() {
-  		$q.all([
-  			$http.get('/api/game/'),
-  			$http.get('/api/game/'),
-  			$http.get('/api/game/')
-  		]).then(function(results){
+  	o.retrieveGames = function(num, cb) {
+        var games = [];
+        games.push($http.get('/api/game/default/'));
+        for (var i = 1; i < num; i ++) {
+            games.push($http.get('/api/game/'));
+        }
+        console.log(games);
+  		$q.all(games).then(function(results){
   			 var data = [results[0].data,results[1].data,results[2].data]
 		     angular.copy(data, o.games);
+             cb();
   		});
   	};
 	  return o;

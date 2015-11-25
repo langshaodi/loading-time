@@ -15,11 +15,6 @@ angular.module('app')
 		// timestamp variable for tracking response times
 		var timer;
 
-
-  		// load 3 games from Games service
-		$scope.games = Games.games
-		Games.retrieveGames()
-
 		// store user's answers to puzzles
 		$scope.response = {
 			participant : {
@@ -38,18 +33,17 @@ angular.module('app')
 	
 
 		$scope.save_user = function(){
-			if ($scope.response.participant.age 
-					&& $scope.response.participant.gender){
+			if ($scope.number_of_games){
 				
 				//start game after 3 seconds
 				// TODO countdown display
 				$scope.load_screen = true;
-				$timeout(function(){
+		  		// load 3 games from Games service
+				$scope.games = Games.games
+				Games.retrieveGames($scope.number_of_games, function() {
 					$scope.load_screen = false;
-					$scope.user_set = true;
- 					timer = new Date();
-				},3000)
-
+					$scope.user_set = true;					
+				});
 			}else{return}
 		}
 
@@ -65,13 +59,12 @@ angular.module('app')
 			}
 			$scope.response.answers.push(res);
 			$scope.active_puzzle ++;
-			console.log(res);
 
 			if ($scope.active_puzzle >= $scope.games[$scope.active_game].puzzles.length ){
 				if ($scope.active_game < 2 ){
 					$scope.intermission = true;
 				}else {
-					submitResponses();
+					$scope.submitResponses();
 				}
 			}else{
 				$scope.load_screen = true;
@@ -89,7 +82,7 @@ angular.module('app')
 			$scope.active_puzzle = 0;
 		}
 
-		submitResponses = function() {
+		$scope.submitResponses = function() {
 			//POST results
 			alert("thank you!");
 		}
