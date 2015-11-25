@@ -9,6 +9,7 @@ angular.module('app')
 		$scope.feedback_set = false;
 		$scope.load_screen = false;
 		$scope.intermission = false;
+		$scope.done = false;
 		// currently visible game and puzzle
 		$scope.active_game = 0;		
   		$scope.active_puzzle = 0;
@@ -42,7 +43,8 @@ angular.module('app')
 				$scope.games = Games.games
 				Games.retrieveGames($scope.number_of_games, function() {
 					$scope.load_screen = false;
-					$scope.user_set = true;					
+					$scope.user_set = true;	
+					timer = new Date();				
 				});
 			}else{return}
 		}
@@ -59,19 +61,21 @@ angular.module('app')
 			}
 			$scope.response.answers.push(res);
 			$scope.active_puzzle ++;
-
 			if ($scope.active_puzzle >= $scope.games[$scope.active_game].puzzles.length ){
-				if ($scope.active_game < 2 ){
+				console.log('here')
+				console.log($scope.active_game);
+				console.log($scope.number_of_games);
+				if ($scope.active_game + 1 < $scope.number_of_games ){
 					$scope.intermission = true;
 				}else {
-					$scope.submitResponses();
+					submitResponses();
 				}
 			}else{
 				$scope.load_screen = true;
 				$timeout(function(){	
 					$scope.load_screen = false;
 					timer = new Date();
-				}, $scope.games[$scope.active_game].delay * 1000)
+				}, $scope.games[$scope.active_game].delay )//* 1000)
 
 			}
 		};
@@ -82,9 +86,9 @@ angular.module('app')
 			$scope.active_puzzle = 0;
 		}
 
-		$scope.submitResponses = function() {
-			//POST results
-			alert("thank you!");
+		submitResponses = function() {
+			$scope.done = true;
+			console.log($scope.response);
 		}
 
 

@@ -15,7 +15,10 @@ angular.module('app')
         }
         console.log(games);
   		$q.all(games).then(function(results){
-  			 var data = [results[0].data,results[1].data,results[2].data]
+  			 var data = [];
+             for (j = 0; j < games.length ; j++){
+                data[j] = results[j].data;
+             }
 		     angular.copy(data, o.games);
              cb();
   		});

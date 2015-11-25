@@ -57,8 +57,18 @@
 
 	<!-- intermission -->
 	<div ng-show="intermission == true;">
-		<p> Please click when you are ready for the next game. </p>
-		<button ng-click="continue()">Continue</button>
+		<div class="container initial">
+			<div class="intermission">
+				<div><p> Please click when you are ready for the next game. </p></div>
+				<div><button class="btn btn-success" ng-click="continue()">Continue</button></div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="done == true;">
+		<div class="container initial">
+			<h1>Thank you! Your responses have been recorded.</h1>
+		</div>
 	</div>
 
 <script type="text/javascript">
