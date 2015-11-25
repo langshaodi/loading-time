@@ -9,33 +9,34 @@ angular.module('app')
 		$scope.feedback_set = false;
 		$scope.load_screen = false;
 		$scope.intermission = false;
+		$scope.frustration = false;
 		$scope.done = false;
 		// currently visible game and puzzle
 		$scope.active_game = 0;		
   		$scope.active_puzzle = 0;
 		// timestamp variable for tracking response times
 		var timer;
-
-		// store user's answers to puzzles
-		$scope.response = {
-			participant : {
-				//age
-				//gender
-			},
-			feedback : {
-				//frustration
-				//difficulty
-				//additional comments
-			},
-			answers : [
-			// puzzle id, answer id, game id, response time in ms
-			]
-		}
 	
 
 		$scope.save_user = function(){
-			if ($scope.number_of_games){
-				
+			if ($scope.number_of_games && ($scope.age >= 18)){
+						// store user's answers to puzzles
+				var games = [];
+				for (var i = 0; i < $scope.number_of_games; i ++) {
+					games.push({frustration:null, responses:[]});
+				}
+				$scope.response = {
+					participant : {
+						//age
+						//gender
+					},
+					feedback : {
+						//frustration
+						//difficulty
+						//additional comments
+					},
+					games : games
+				}
 				//start game after 3 seconds
 				// TODO countdown display
 				$scope.load_screen = true;
@@ -46,7 +47,12 @@ angular.module('app')
 					$scope.user_set = true;	
 					timer = new Date();				
 				});
-			}else{return}
+			} else {
+				if ($scope.age < 18) {
+					alert("You must be 18 years or older to complete this study.")
+				}
+				return
+			}
 		}
 
 		// show next puzzle, pause for intermission between games, or complete submission
@@ -59,17 +65,10 @@ angular.module('app')
 				answer_id : $scope.selected_answer,
 				response_time_in_ms : time
 			}
-			$scope.response.answers.push(res);
+			$scope.response.games[$scope.active_game].responses.push(res);
 			$scope.active_puzzle ++;
 			if ($scope.active_puzzle >= $scope.games[$scope.active_game].puzzles.length ){
-				console.log('here')
-				console.log($scope.active_game);
-				console.log($scope.number_of_games);
-				if ($scope.active_game + 1 < $scope.number_of_games ){
-					$scope.intermission = true;
-				}else {
-					submitResponses();
-				}
+				$scope.frustration = true;
 			}else{
 				$scope.load_screen = true;
 				$timeout(function(){	
@@ -79,6 +78,21 @@ angular.module('app')
 
 			}
 		};
+
+		$scope.save_frustration = function () {
+			if ($scope.frustrationValue != null) {
+				$scope.response.games[$scope.active_game].frustration = parseInt($scope.frustrationValue);
+				$scope.frustrationValue = null;
+				$scope.frustration = false;
+				if ($scope.active_game + 1 < $scope.number_of_games ){
+					$scope.intermission = true;
+				}else {
+					submitResponses();
+				}		
+			} else {
+				alert('Please indicate your level of frustration before continuing.')
+			}
+		}
 
 		$scope.continue = function(){
 			$scope.intermission = false;
@@ -90,6 +104,4 @@ angular.module('app')
 			$scope.done = true;
 			console.log($scope.response);
 		}
-
-
-	}])
+	}]);

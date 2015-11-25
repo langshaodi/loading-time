@@ -19,8 +19,17 @@
 		<div class="container initial">
 			<form id='participant-data' ng-submit="save_user()" >
 				<h1>Study: User Performance on Single Page Applications</h1>
-				<div>Select the number of games that you wish to play (please enter 2, 3, 4, or 5): </div>
-				<div><label>Games:</label><input type='number' ng-model="number_of_games"></div>
+				<div class="instructions">You will be presented with a series of verbal analogies. For each analogy you must select the word that completes the relationship. For example:
+						Aspirin is to headache as nap is to _______.
+						<ol>
+							<li>tylenol</li>
+							<li>fatigue (correct answer)</li>
+							<li>dancing</li>
+							<li>sleeping</li>
+						</ol>
+					Choose the answer by clicking it. Be sure that your answer is final, as you will be unable to change it later.<br><br> Answer each puzzle as quickly and accurately as you can - within your comfortable pace. Each game you play consists of 10 of these puzzles. You can play between 2 and 5 games (with short breaks in between).</div>
+				<div><label>Number of games:</label><input type='number' ng-model="number_of_games"></div>
+				<div><label>Please enter your age:</label><input type='number' ng-model="age"></div>
 				<div><button type="submit" class="btn btn-success">Start Game</button></div>
 			</form>
 		</div>
@@ -62,6 +71,32 @@
 				<div><p> Please click when you are ready for the next game. </p></div>
 				<div><button class="btn btn-success" ng-click="continue()">Continue</button></div>
 			</div>
+		</div>
+	</div>
+	<!-- frustration -->
+	<div ng-show="frustration == true;">
+		<div class="container">
+			<div class="frustration">
+				<div><p> On a scale of 1 to 5 (1 - Not frustrating, 5 - Very Frustrating), how frustrating was this game? </p></div>
+			  <form role="form">
+			    <label class="radio-inline">
+			      <input type="radio" ng-model="frustrationValue" value="1">1 (Not Frustrating)
+			    </label>
+			    <label class="radio-inline">
+			      <input type="radio" ng-model="frustrationValue" value="2">2
+			    </label>
+			    <label class="radio-inline">
+			      <input type="radio" ng-model="frustrationValue" value="3">3
+			    </label>
+			    <label class="radio-inline">
+			      <input type="radio" ng-model="frustrationValue" value="4">4
+			    </label>
+			    <label class="radio-inline">
+			      <input type="radio" ng-model="frustrationValue" value="5">5 (Very Frustrating)
+			    </label>
+			  </form>
+			  <button ng-click="save_frustration()" class="btn btn-success">Submit</button>
+ 			</div>
 		</div>
 	</div>
 
