@@ -17,45 +17,31 @@ wife is to woman as _ is to man ANS father, groom, boy, Husband
 book is to _ as comb is to tooth ANS title, library, Page, Knowledge
 boy is to child as man is to _ ANS father, uncle, Adult, person
 flower is to weed as _ is to buzzard ANS plant, Swan, bird, vulture
-author is to novel as _ is to song ANS singer, musician, Composer, writer, tune
-wind is to blow as rain is to _ ANS flood, water, measure, Fall, drops
-profess is to creed as advocate is to _ ANS nuance, intimations, cherub, Doctrine, protagonist
-inarticulate is to verbal as contemporary is to _ ANS delicate, philistine, Prehistoric, mortal, misogyny
-ludicrous is to satirical as delicious is to _ ANS Succulent, intriguing, obscure, grasping, irrational
-conspicuous is to obscure as eccentric is to _ ANS picturesque, tedious, odd, foolhardy, Conventional
-subtle is to nuance as pedantic is to _ ANS pragmatic, Academic, initial, constant, latter
-allude is to refer as proclivity is to _ ANS Tendency, illusion, gamut, scrutiny, relegate
-despair is to hope as permanence is to _ ANS Transience, acquisition, chauvinism, recalcitrance, infinity
-smile is to happiness as crocus is to _ ANS flower, Spring, garden, planting, sign
-allay is to _ as temporize is to stall ANS manipulate, erode, Calm, impede, exaggerate
-Grim Reaper is to death as Cupid is to _ ANS valentine, arrow, cherub, heart, Love
-resole is to shoe as _ is to guitar ANS refine, rescue, repair, rerun, Restring
-censure is to reprehensible as applause is to _ ANS valuable, supportive, Enthusiastic, informed, initial 
-happiness is to smile as _ is to frown ANS Worry, terror, mood, temper, encomium
-water is to _ as food is to hunger ANS element, drink, starvation, liquid, Thirst
-studio is to art as _ is to music ANS painting, Conservatory, hall, study, band room
-low is to _ as scalpel is to incision ANS soil, clearing, Furrow, earth, agriculture
-government is to _ as media is to news ANS rule, bureaus, people, Laws, legislature
-chapeau is to head as _ is to arm ANS bracelet, watch, Sleeve, clothing, elbow
-light bulb is to electricity as car is to _ ANS oil, motor, wheels, generator, Gasoline
-health is to illness as government is to _ ANS law, Anarchy, theocracy, matriarchy, trouble
-verse is to song as _ is to cob ANS Kernel, part, ear, stalk, yellow
-cows is to herd as geese is to _ ANS crowd, group, Gaggle, pride, pack
-lawyer is to chicanery as surgeon is to _ ANS astute, quack, fraud, accuracy, Ineptitude
-pediatrician is to children as linguist is to _ ANS therapy, Language, bones, suits, thief
-denigrate is to praise as _ is to dynamic ANS Languorous, crafty, perspicacious, deplore, facetious
-cat is to feline as bull is to _ ANS feminine, canine, man, Taurine, virile
-performer is to play as power is to _ ANS light, Machine, cart, switch, motor
-rock is to permanence as _ is to strength ANS harmony, sin, diamond, gold, Oak tree
-words is to speech as _ is to book ANS peeling, leaves, Pages, potato, seeds
-expression is to face as facade is to _ ANS smile, inside, head, Building, look
-tiger is to ferocious as deer is to _ ANS Timorous, milk, lion, pet, tractable
-ameliorate is to better as arcane is to _ ANS friendship, amity, annoy, Mysterious, obtuse
-skeleton is to body as superstructure is to _ ANS root, Ship, plane, vessel, house
-squash is to vine as apple is to _ ANS plant, Tree, bush, berry, shrub
-honey is to hive as wine is to _ ANS tub, bowl, Cask, pan, soup
-radiance is to glimmer as glow is to _ ANS Shine, glitter, light, shimmer, dawn
-cow is to cheese as whale is to _ ANS Perfume, steer, deer, pollen, goat
-scrivener is to scroll as seamstress is to _ ANS parchment, work, axe, Garment, stamp
-bellicose is to sedate as wizened is to _ ANS loud, pacific, Fleshy, unformed, livid
-tantamount is to equivalent as succinct is to _ ANS horse, Concise, evenly, skilled, ambivalent
+author is to novel as _ is to song ANS singer, musician, Composer, writer
+wind is to blow as rain is to _ ANS flood, water, Fall, drops
+profess is to creed as advocate is to _ ANS intimations, cherub, Doctrine, protagonist
+inarticulate is to verbal as contemporary is to _ ANS delicate, Prehistoric, mortal, misogyny
+ludicrous is to satirical as delicious is to _ ANS Succulent, intriguing, obscure, grasping
+despair is to hope as permanence is to _ ANS Transience, acquisition, chauvinism, infinity
+Grim Reaper is to death as Cupid is to _ ANS valentine, arrow, heart, Love
+resole is to shoe as _ is to guitar ANS refine, rescue, repair, Restring
+happiness is to smile as _ is to frown ANS Worry, terror, mood, temper
+water is to _ as food is to hunger ANS drink, starvation, liquid, Thirst
+studio is to art as _ is to music ANS painting, Conservatory, hall, study
+plow is to _ as scalpel is to incision ANS soil, clearing, Furrow, agriculture
+government is to _ as media is to news ANS rule, people, Laws, legislature
+chapeau is to head as _ is to arm ANS bracelet, watch, Sleeve, clothing
+light bulb is to electricity as car is to _ ANS oil, motor, wheels, Gasoline
+health is to illness as government is to _ ANS law, Anarchy, theocracy, trouble
+verse is to song as _ is to cob ANS Kernel, part, ear, stalk
+pediatrician is to children as linguist is to _ ANS therapy, Language, bones, thief
+cat is to feline as bull is to _ ANS feminine, canine, man, Taurine
+performer is to play as power is to _ ANS light, Machine, cart, motor
+rock is to permanence as _ is to strength ANS harmony, sin, gold, Oak tree
+words is to speech as _ is to book ANS peeling, leaves, Pages, seeds
+tiger is to ferocious as deer is to _ ANS Timorous, lion, pet, tractable
+skeleton is to body as superstructure is to _ ANS root, Ship, plane, vessel
+squash is to vine as apple is to _ ANS plant, Tree, bush, berry
+honey is to hive as wine is to _ ANS tub, bowl, Cask, pan
+radiance is to glimmer as glow is to _ ANS Shine, glitter, light, dawn
+cow is to cheese as whale is to _ ANS Perfume, steer, deer, goat

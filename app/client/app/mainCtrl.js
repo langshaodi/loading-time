@@ -11,14 +11,14 @@ angular.module('app')
 		$scope.intermission = false;
 		// currently visible game and puzzle
 		$scope.active_game = 0;		
-  	$scope.active_puzzle = 0;
+  		$scope.active_puzzle = 0;
 		// timestamp variable for tracking response times
 		var timer;
 
 
-  	// load 3 games from Games service
-	  $scope.games = Games.games
-	  Games.retrieveGames()
+  		// load 3 games from Games service
+		$scope.games = Games.games
+		Games.retrieveGames()
 
 		// store user's answers to puzzles
 		$scope.response = {
@@ -65,6 +65,7 @@ angular.module('app')
 			}
 			$scope.response.answers.push(res);
 			$scope.active_puzzle ++;
+			console.log(res);
 
 			if ($scope.active_puzzle >= $scope.games[$scope.active_game].puzzles.length ){
 				if ($scope.active_game < 2 ){

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/app.css">
 	<script type="text/javascript" src="/static/angular/angular.js"></script>
 	<script type="text/javascript" src="/static/js/app.js"></script>
 	<title></title>
@@ -14,18 +16,20 @@
 	-->
 
 	<div ng-show="user_set == false">
-	<form id='participant-data' ng-submit="save_user()">
-		<p>Hello! Please fill out the following information:</p>
-		<label> Age: <input type='number' ng-model="response.participant.age"></label>
-		<label> Gender: 
-			<select ng-model="response.participant.gender">
-				<option value="M">Male</option>
-				<option value="F">Female</option>
-			</select>
-		</label>
+		<div class="container initial">
+			<form id='participant-data' ng-submit="save_user()" >
+				<p>Hello! Please fill out the following information:</p>
+				<label> Age: </label>
+				<input type='number' ng-model="response.participant.age">
+				<label> Gender:</label>
+				<select ng-model="response.participant.gender">
+					<option value="M">Male</option>
+					<option value="F">Female</option>
+				</select>
 
-		<button type="submit">Submit</button>
-	</form>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
 	</div>
 
 
@@ -34,14 +38,14 @@
 
 	<!-- display one question at a time -->
 	<div ng-show="$index == active_puzzle && load_screen == false;">
-		<p>	{{puzzle.question}} </p>
-		<form class="puzzle-form" ng-submit="save_response(games[active_game].id, puzzle.id)">
-			<div ng-repeat="answer in puzzle.answers">
-			<input type="radio" name='test' ng-model="$parent.$parent.selected_answer" ng-value="answer.id">
-				{{answer.text}}
-			</div>
-			<button type="submit">Submit</button>
-		</form>
+		<div class="container question">
+			<h1>	{{puzzle.question}} </h1>
+				<div ng-repeat="answer in puzzle.answers" class="col-xs-6">
+					<a type="radio" data-id="{{answer.id}}" name='test' class="answer" ng-click="$parent.$parent.selected_answer = answer.id;save_response(games[active_game].id, puzzle.id)" ng-model="$parent.$parent.selected_answer">
+						{{answer.text}}
+					</a>
+				</div>
+		</div>
 	</div>
 	
 	</div>
@@ -49,7 +53,12 @@
 
 	<!-- loading widget -->
 	<div ng-show="load_screen == true;">
-		<p> LOADING </p>
+		<div class="cssload-thecube">
+			<div class="cssload-cube cssload-c1"></div>
+			<div class="cssload-cube cssload-c2"></div>
+			<div class="cssload-cube cssload-c4"></div>
+			<div class="cssload-cube cssload-c3"></div>
+		</div>
 	</div>
 
 	<!-- intermission -->
@@ -58,6 +67,11 @@
 		<button ng-click="continue()">Continue</button>
 	</div>
 
-	
+<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "If you leave this page, your results will not be recorded!";
+    }
+</script>
+
 </body>
 </html>
