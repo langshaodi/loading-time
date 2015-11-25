@@ -68,7 +68,7 @@
 	<div ng-show="intermission == true;">
 		<div class="container initial">
 			<div class="intermission">
-				<div><p> Please click when you are ready for the next game. </p></div>
+				<div><p> Take a moment before continuing to the next game. You are encouraged to take a break less than two minutes long. Please click when you are ready for the next game. </p></div>
 				<div><button class="btn btn-success" ng-click="continue()">Continue</button></div>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 				<div><p> On a scale of 1 to 5 (1 - Not frustrating, 5 - Very Frustrating), how frustrating was this game? </p></div>
 			  <form role="form">
 			    <label class="radio-inline">
-			      <input type="radio" ng-model="frustrationValue" value="1">1 (Not Frustrating)
+			      <input type="radio" ng-model="frustrationValue" value="1">1
 			    </label>
 			    <label class="radio-inline">
 			      <input type="radio" ng-model="frustrationValue" value="2">2
@@ -92,7 +92,7 @@
 			      <input type="radio" ng-model="frustrationValue" value="4">4
 			    </label>
 			    <label class="radio-inline">
-			      <input type="radio" ng-model="frustrationValue" value="5">5 (Very Frustrating)
+			      <input type="radio" ng-model="frustrationValue" value="5">5
 			    </label>
 			  </form>
 			  <button ng-click="save_frustration()" class="btn btn-success">Submit</button>
