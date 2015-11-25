@@ -74,7 +74,7 @@ angular.module('app')
 				$timeout(function(){	
 					$scope.load_screen = false;
 					timer = new Date();
-				}, $scope.games[$scope.active_game].delay * 1000)
+				}, $scope.games[$scope.active_game].delay )//* 1000)
 
 			}
 		};
@@ -98,6 +98,11 @@ angular.module('app')
 			$scope.intermission = false;
 			$scope.active_game ++;
 			$scope.active_puzzle = 0;
+		}
+
+		$scope.terminate = function() {
+			submitResponses();
+			$scope.intermission = false;
 		}
 
 		submitResponses = function() {

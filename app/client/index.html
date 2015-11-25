@@ -70,6 +70,7 @@
 			<div class="intermission">
 				<div><p> Take a moment before continuing to the next game. You are encouraged to take a break less than two minutes long. Please click when you are ready for the next game. </p></div>
 				<div><button class="btn btn-success" ng-click="continue()">Continue</button></div>
+				<div><button ng-hide="active_game == 0" class="btn btn-danger" ng-click="terminate()">Save and Exit</button></div>
 			</div>
 		</div>
 	</div>
