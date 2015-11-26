@@ -2,13 +2,12 @@ from django.db import models
 
 
 class Response(models.Model):
-    # User name
-    name = models.CharField(max_length=100, blank=True, null=True)
+    submitted = models.DateTimeField(auto_now_add=True)
 
 
 class GameResponse(models.Model):
     response = models.ForeignKey(Response)
-    game = models.OneToOneField('games.Game')
+    game = models.ForeignKey('games.Game')
     submitted = models.DateTimeField(auto_now_add=True)
     frustration = models.SmallIntegerField(blank=False, null=False)
     total_time = models.FloatField(blank=True, null=True)

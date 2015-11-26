@@ -35,6 +35,7 @@ class GameAdmin(admin.ModelAdmin):
     inlines = [
         GamePuzzleInline,
     ]
+    list_display = ('verbose_name', 'default',)
 
     def get_readonly_fields(self, request, obj=None):
         if obj:
