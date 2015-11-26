@@ -20,8 +20,15 @@ class Game(models.Model):
         return len(self.puzzles.all())
 
     def __repr__(self):
-        return "Game with " + str(self.num_puzzles()) + \
-            " puzzle(s) and delay: " + str(self.delay)
+        prefix = "Default game " if self.default else "Game "
+        return "{} with {} puzzle(s) and delay: {}".format(
+            prefix,
+            str(self.num_puzzles()),
+            str(self.delay)
+        )
+
+    def verbose_name(self):
+        return self.__repr__()
 
     def __str__(self):
         return self.__repr__()
