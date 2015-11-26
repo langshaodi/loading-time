@@ -1,5 +1,5 @@
 arrival is to departure as _ is to death ANS Life, person, illness, train
-elbow is to arm as knee is to _ ANS walking, Finger, leg, nose
+elbow is to arm as knee is to _ ANS walking, finger, Leg, nose
 car is to road as train is to _ ANS Track, vehicle, fast, wheel
 baiting hook is to fishing as _ is to hunting ANS Loading gun, firing gun, stalking game, aiming gun
 violence is to activity as melancholy is to _ ANS evening, cruelty, Mood, silence
