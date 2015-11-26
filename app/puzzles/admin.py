@@ -10,6 +10,7 @@ class PuzzleAnswerOptionInline(admin.StackedInline):
 
 
 class PuzzleAdmin(admin.ModelAdmin):
+    list_display = ('question_with_answer',)
     inlines = [
         PuzzleAnswerOptionInline,
     ]
