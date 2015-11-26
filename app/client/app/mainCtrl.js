@@ -74,7 +74,7 @@ angular.module('app')
 				$timeout(function(){	
 					$scope.load_screen = false;
 					timer = new Date();
-				}, $scope.games[$scope.active_game].delay * 1000)
+				}, $scope.games[$scope.active_game].delay)// * 1000)
 
 			}
 		};
@@ -107,6 +107,14 @@ angular.module('app')
 
 		submitResponses = function() {
 			$scope.done = true;
+			$http.post('/api/response/', $scope.response).then(
+				function(resp){
+					$scope.end_message = "Thank you! Your responses have been recorded."
+				},
+				function(resp){
+					$scope.end_message = JSON.stringify(response) + "\n" + JSON.stringify($scope.response);
+				}
+			);
 			console.log($scope.response);
 		}
 	}]);
