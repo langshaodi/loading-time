@@ -48,7 +48,7 @@ class Command(BaseCommand):
             to_obj.append((a, b, x, y, answers))
 
         for obj in to_obj:
-            a, x, b, y, answers = obj
+            a, b, x, y, answers = obj
             puzzle, c = get_or_create(
                 Puzzle,
                 comparison_a_1=a,

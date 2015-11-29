@@ -14,7 +14,7 @@ professor is to _ as musician is to entertainment ANS pupils, school, homework, 
 grains is to sand as drops is to ANS Rain, snow, surf, flood
 wave is to tide as moment is to _ ANS time, ocean, tardiness, Clock
 wife is to woman as _ is to man ANS father, groom, boy, Husband
-book is to _ as comb is to tooth ANS title, library, Page, Knowledge
+book is to _ as comb is to tooth ANS title, library, Page, knowledge
 boy is to child as man is to _ ANS father, uncle, Adult, person
 flower is to weed as _ is to buzzard ANS plant, Swan, bird, vulture
 author is to novel as _ is to song ANS singer, musician, Composer, writer
