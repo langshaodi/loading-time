@@ -7,7 +7,6 @@ from responses.views import ResponseView
 urlpatterns = []
 
 apipatterns = [
-    url(r'^$', index),
     url(r'^game/$', GameView.as_view()),
     url(r'^game/default/$', DefaultGameView.as_view()),
     url(r'^response/$', ResponseView.as_view())
@@ -16,6 +15,7 @@ apipatterns = [
 urlpatterns += [url(r'^api/', include(apipatterns))]
 
 urlpatterns += [
+    url(r'^$', index),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/$', urls_as_view)
 ]
