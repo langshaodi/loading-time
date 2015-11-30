@@ -4,6 +4,12 @@ from django.db import models
 class Response(models.Model):
     submitted = models.DateTimeField(auto_now_add=True)
 
+    def __repr__(self):
+        return "Response {}".format(self.pk)
+
+    def __str__(self):
+        return self.__repr__()
+
 
 class GameResponse(models.Model):
     response = models.ForeignKey(Response)
