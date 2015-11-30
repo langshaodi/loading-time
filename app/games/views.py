@@ -52,13 +52,16 @@ class MultiGameView(APIView):
 
     def get(self, request, format=None):
         num = int(request.GET.get('num'))
+
         default_game = Game.objects.get(default=True)
+        default_ids = default_game.puzzles.values_list('id', flat=True)
     
-        puzzles = [p for p in Puzzle.objects.all().order_by(
+        puzzles = [p for p in Puzzle.objects.all().exclude(id__in=default_ids).order_by(
                 '?') if p.correct_answer()]#[:settings.NUM_OF_PUZZLES]
 
         games = []
-        for i in range(0,num):
+        games.append(GameSerializer(default_game).data)
+        for i in range(0,num -1):
             game = Game.objects.create()
             game.puzzles = puzzles[i*10:(i+1)*settings.NUM_OF_PUZZLES]
             game.save()
