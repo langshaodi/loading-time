@@ -9,6 +9,7 @@ angular.module('app')
 	  // retrieve n games
   	o.retrieveGames = function(num, cb) {
         var games = [];
+
         games.push($http.get('/api/game/default/'));
         for (var i = 1; i < num; i ++) {
             games.push($http.get('/api/game/'));
@@ -27,6 +28,9 @@ angular.module('app')
   	//retrieve multiple games
   	o.multiGames = function(num, cb) {
         var games = [];
+        if (num > 5) {
+          num = 5;
+        }
         games.push($http.get('/api/game/multi/?num='+num));
 
         console.log(games);
