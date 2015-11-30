@@ -42,11 +42,21 @@ angular.module('app')
 				$scope.load_screen = true;
 		  		// load 3 games from Games service
 				$scope.games = Games.games
-				Games.retrieveGames($scope.number_of_games, function() {
+			/*
+					Games.retrieveGames($scope.number_of_games, function() {
 					$scope.load_screen = false;
 					$scope.user_set = true;	
 					timer = new Date();				
 				});
+			*/
+					Games.multiGames($scope.number_of_games, function() {
+					$scope.load_screen = false;
+					$scope.user_set = true;	
+					$scope.games = $scope.games[0];
+					// ^^^ ugly hack because i couldn't figure out how to return array that wasnt double nested
+					timer = new Date();	
+				});
+
 			} else {
 				if ($scope.age < 18) {
 					alert("You must be 18 years or older to complete this study.")

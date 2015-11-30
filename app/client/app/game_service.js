@@ -6,7 +6,7 @@ angular.module('app')
 	    games: []
 	  };
 
-	  // retrieve 3 games
+	  // retrieve n games
   	o.retrieveGames = function(num, cb) {
         var games = [];
         games.push($http.get('/api/game/default/'));
@@ -23,6 +23,24 @@ angular.module('app')
              cb();
   		});
   	};
+
+  	//retrieve multiple games
+  	o.multiGames = function(num, cb) {
+        var games = [];
+        games.push($http.get('/api/game/multi/?num='+num));
+
+        console.log(games);
+  		$q.all(games).then(function(results){
+  			 var data = [];
+             for (j = 0; j < games.length ; j++){
+                data[j] = results[j].data;
+             }
+		     angular.copy(data, o.games);
+             cb();
+  		});
+  	};
+
+
 	  return o;
 	}
 	]);

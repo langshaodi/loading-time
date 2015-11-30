@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from core.views import index, urls_as_view
-from games.views import GameView, DefaultGameView
+from games.views import GameView, DefaultGameView, MultiGameView
 from responses.views import ResponseView
 
 urlpatterns = []
@@ -9,6 +9,7 @@ urlpatterns = []
 apipatterns = [
     url(r'^game/$', GameView.as_view()),
     url(r'^game/default/$', DefaultGameView.as_view()),
+    url(r'^game/multi/$', MultiGameView.as_view()),
     url(r'^response/$', ResponseView.as_view())
 ]
 
