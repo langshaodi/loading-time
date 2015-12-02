@@ -18,6 +18,12 @@ class GameResponse(models.Model):
     frustration = models.SmallIntegerField(blank=False, null=False)
     total_time = models.FloatField(blank=True, null=True)
 
+    def __repr__(self):
+        return "Game Response for Responder: {}".format(self.response.pk)
+
+    def __str__(self):
+        return self.__repr__()
+
 
 class PuzzleResponse(models.Model):
     game_response = models.ForeignKey(GameResponse)
